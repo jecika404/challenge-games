@@ -1,0 +1,148 @@
+$red: rgba(231, 76, 60,1.0);
+$red-dark: #d63031;
+$white: rgba(236, 240, 241,1.0);
+$green: rgba(26, 188, 156,1.0);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Dancing Script', cursive;
+}
+
+.game {
+    min-height: 100vh;
+    background: linear-gradient(lighten($red, 4%), $red-dark);
+}
+
+.game__score {
+    height: 20vh;  
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: $white; 
+}
+
+.score__heading {
+    font-size: 50px;
+}
+
+.score__computer-result,
+.score__player-result {
+    display: block;  
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+}
+
+.game__intro {
+    height: 50vh;
+    color: $white;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: all 0.5s ease;
+}
+
+.game__intro-heading {
+    font-size: 50px;
+}
+
+.btn {
+    width: 150px;
+    height: 50px;  
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    color: $white;
+    background-color: $green;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all .5s;
+    &:hover {
+        background-color: darken($green, 20%);
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.game__match {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease 0.5s;
+}
+
+.game__match-heading {
+    font-size: 50px;
+    color: $white;
+    text-align: center;  
+    padding-bottom: 150px;
+}
+
+.game__match-hands,
+.game__match-options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game__match-hands {
+    img {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+    }
+}
+
+.game__intro-bg {
+    position: relative;
+    z-index: 20;   
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        animation: spin 6s cubic-bezier(.8, 0, .2, 1) infinite;     
+    }
+}
+
+.game__match-options {
+    margin-top: 50px;
+    .btn {
+        margin: 0 20px;
+    }
+}
+
+.game__gameover {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h1 {
+        font-size: 60px;
+        color: $white;
+        text-align: center;
+    }
+
+}
+
+.fadeOut {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fadeIn {
+    opacity: 1;
+    pointer-events: all;
+}
+
+@keyframes spin {
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(0deg); }
+  }

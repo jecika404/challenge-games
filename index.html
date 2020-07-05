@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Game</title>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+	<section class="game">
+	  <div class="game__score">
+		<div class="score__player">
+		  <h2 class="score__heading">Player</h2>
+		  <span class="score__player-result">0</span>
+		</div>
+		<div class="score__computer">
+		  <h2 class="score__heading">Computer</h2>
+		  <span class="score__computer-result">0</span>
+		</div>
+	  </div>
+	  <div class="game__intro">
+		<div class="game__intro-bg">
+			<img src="assets/images/bg.jpg" alt="">
+		</div>
+		<button class="game__intro-btn btn">Play Game!</button>
+	  </div>
+	  <div class="game__match fadeOut">
+		<h2 class="game__match-heading">Choose an option...</h2>
+		<div class="game__match-hands">
+		  <img src="assets/images/rock.png" alt="" class="game__match-hands--player">
+		  <img src="assets/images/rock.png" alt="" class="game__match-hands--computer">
+		</div>
+		<div class="game__match-options">
+		  <button class="game__match-rock btn">rock</button>
+		  <button class="game__match-paper btn">paper</button>
+		  <button class="game__match-scissors btn">scissors</button>
+		</div>
+	  </div>
+	  <div class="game__gameover fadeOut"></div>
+	</section>
+	<script src="script.js"></script>
+  </body>
+</html>
